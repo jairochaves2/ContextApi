@@ -1,8 +1,8 @@
 import React from "react";
-import { ThemeContext } from "../contexts";
+import { useTheme } from "../contexts";
 
 export default function About() {
-  const { theme } = React.useContext(ThemeContext);
+  const { theme } = useTheme();
   return (
     <div
       style={{
