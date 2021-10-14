@@ -3,12 +3,22 @@ import "./App.css";
 import { ThemeProvider } from "./providers";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Container from "./components/Container";
 
 function App() {
   return (
     <ThemeProvider>
-      <Home />
-      <About />
+      <Container
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gridAutoRows: "100vh",
+          columnGap: "8px",
+        }}
+      >
+        <Home />
+        <About />
+      </Container>
     </ThemeProvider>
   );
 }
