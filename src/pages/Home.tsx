@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import { ThemeContext } from "../contexts";
+import React from "react";
+import { useTheme } from "../contexts";
 
 export default function Home() {
-  const { theme, setThemeValue, themeValue } = useContext(ThemeContext);
+  const { theme, setThemeValue, themeValue } = useTheme();
   function toggleTheme() {
     setThemeValue(!themeValue);
   }

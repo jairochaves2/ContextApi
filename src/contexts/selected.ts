@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
 interface palletteTheme {
   main: string;
@@ -22,8 +22,13 @@ const secondary: palletteTheme = {
   main: "#0000ff",
   text: "#ffffff",
 };
-export default createContext<ContextType>({
+const themeContext = createContext<ContextType>({
   theme: { primary, secondary },
   setThemeValue: () => {},
   themeValue: false,
 });
+export function useTheme(): ContextType {
+  const context = useContext(themeContext);
+  return context;
+}
+export default themeContext;
